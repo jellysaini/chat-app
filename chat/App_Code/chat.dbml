@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="chat" Class="chatDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=jelly-pc;Initial Catalog=chat;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="chatConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblog" Member="tblogs">
+    <Type Name="tblog">
+      <Column Name="logcod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="logusrcod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="logromcod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbrom_tblog" Member="tbrom" ThisKey="logromcod" Type="tbrom" IsForeignKey="true" />
+      <Association Name="tbuser_tblog" Member="tbuser" ThisKey="logcod" Type="tbuser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbmsg" Member="tbmsgs">
+    <Type Name="tbmsg">
+      <Column Name="msgcod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="msgdsc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="msgdat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="msgfrmusr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="msgtousrcod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="msgromcod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbrom_tbmsg" Member="tbrom" ThisKey="msgromcod" Type="tbrom" IsForeignKey="true" />
+      <Association Name="tbuser_tbmsg" Member="tbuser" ThisKey="msgfrmusr" Type="tbuser" IsForeignKey="true" />
+      <Association Name="tbuser_tbmsg1" Member="tbuser1" ThisKey="msgtousrcod" Type="tbuser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbrom" Member="tbroms">
+    <Type Name="tbrom">
+      <Column Name="romcod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="romnam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbrom_tblog" Member="tblogs" OtherKey="logromcod" Type="tblog" />
+      <Association Name="tbrom_tbmsg" Member="tbmsgs" OtherKey="msgromcod" Type="tbmsg" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbuser" Member="tbusers">
+    <Type Name="tbuser">
+      <Column Name="usrcod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usrname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usrpass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbuser_tblog" Member="tblog" OtherKey="logcod" Type="tblog" Cardinality="One" />
+      <Association Name="tbuser_tbmsg" Member="tbmsgs" OtherKey="msgfrmusr" Type="tbmsg" />
+      <Association Name="tbuser_tbmsg1" Member="tbmsgs1" OtherKey="msgtousrcod" Type="tbmsg" />
+    </Type>
+  </Table>
+</Database>

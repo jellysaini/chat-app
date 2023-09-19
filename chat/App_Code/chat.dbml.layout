@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="chat">
+  <DataContextMoniker Name="/chatDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d7a65fe5-5839-4ebb-b72a-b1582021cbfe" absoluteBounds="4.25, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/chatDataContext/tblog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a27214f2-8d9e-4697-9c48-1657d55a73d7" absoluteBounds="4.265, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c480a98e-f680-42e0-bdd7-5237d380ed6e" absoluteBounds="7.25, 4.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/chatDataContext/tbmsg" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5e3e2da-95e8-42cb-a17b-1e13789a137d" absoluteBounds="7.265, 4.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7881624f-cb53-4afe-a0b1-8e417bb8f2aa" absoluteBounds="4.375, 3.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/chatDataContext/tbrom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3956945-0084-4e04-a3b5-5b37ae850c92" absoluteBounds="4.39, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.3125 : 3.25); (5.3125 : 2.7612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chatDataContext/tbrom/tbrom_tblog" />
+      <nodes>
+        <classShapeMoniker Id="7881624f-cb53-4afe-a0b1-8e417bb8f2aa" />
+        <classShapeMoniker Id="d7a65fe5-5839-4ebb-b72a-b1582021cbfe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.375 : 4.28449625651042); (7.25 : 4.28449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chatDataContext/tbrom/tbrom_tbmsg" />
+      <nodes>
+        <classShapeMoniker Id="7881624f-cb53-4afe-a0b1-8e417bb8f2aa" />
+        <classShapeMoniker Id="c480a98e-f680-42e0-bdd7-5237d380ed6e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ce6d4750-ff08-4093-8560-1247f63515b4" absoluteBounds="1.5, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/chatDataContext/tbuser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="651f2d98-5e08-4382-afd0-dc6edfe8f24a" absoluteBounds="1.5150000000000001, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 1.94314697265625); (4.25 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chatDataContext/tbuser/tbuser_tblog" />
+      <nodes>
+        <classShapeMoniker Id="ce6d4750-ff08-4093-8560-1247f63515b4" />
+        <classShapeMoniker Id="d7a65fe5-5839-4ebb-b72a-b1582021cbfe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.5112939453125); (2.5 : 5.35984537760417); (7.25 : 5.35984537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chatDataContext/tbuser/tbuser_tbmsg" />
+      <nodes>
+        <classShapeMoniker Id="ce6d4750-ff08-4093-8560-1247f63515b4" />
+        <classShapeMoniker Id="c480a98e-f680-42e0-bdd7-5237d380ed6e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.0312525 : 2.5112939453125); (3.0312525 : 4.9019164453125); (7.25 : 4.9019164453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chatDataContext/tbuser/tbuser_tbmsg1" />
+      <nodes>
+        <classShapeMoniker Id="ce6d4750-ff08-4093-8560-1247f63515b4" />
+        <classShapeMoniker Id="c480a98e-f680-42e0-bdd7-5237d380ed6e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
